@@ -1,5 +1,5 @@
 name: Issue Creation Workflow
-on: [push, workflow_dispatch]
+on: issues
 jobs:
   output:
     name: Output of Issue Details
