@@ -1,8 +1,8 @@
 name: React JS Workflow
 on: [push, workflow_dispatch]
 jobs:
-  Run-npm-on-Ubuntu:
-    name: Run npm on Ubuntu
+  Run-Test-on-APP:
+    name: Run Test on APP
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -13,4 +13,18 @@ jobs:
           node-version: '18'
       - name: Installing dependencies
         run: npm ci
-      
+  Building-APP:
+    name: Building the Code
+    needs: Run-Test-on-APP
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Installing Node 
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Installing dependencies
+        run: npm ci
+      - name: Building Code
+        run: npm run build
