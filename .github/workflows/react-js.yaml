@@ -12,5 +12,5 @@ jobs:
         with:
           node-version: '18'
       - name: Installing dependencies
-        run: nmp ci
+        run: npm ci
       
