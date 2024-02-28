@@ -38,18 +38,20 @@ jobs:
         with:
           name: my-artifact
           path: dist
-  # Deploy-APP:
-  #   name: Deploy the Code
-  #   needs: Building-APP
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Get Code
-  #       uses: actions/checkout@v4
-  #     - name: Installing Node 
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version: '18'
-  #     - name: Installing dependencies
-  #       run: npm ci
-  #     - name: Deploying Code...
-  #       run: echo "Deploying Code"
+  Deploy-APP:
+    name: Deploy the Code
+    needs: Building-APP
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Installing Node 
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Downloading Artifats
+        uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
+      - name: Output of Deploying Code...
+        run: ls
