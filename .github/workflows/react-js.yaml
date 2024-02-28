@@ -43,12 +43,6 @@ jobs:
     needs: Building-APP
     runs-on: ubuntu-latest
     steps:
-      - name: Get Code
-        uses: actions/checkout@v4
-      - name: Installing Node 
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
       - name: Downloading Artifats
         uses: actions/download-artifact@v4
         with:
