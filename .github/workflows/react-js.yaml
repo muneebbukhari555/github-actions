@@ -33,18 +33,23 @@ jobs:
         run: npm ci
       - name: Building Code
         run: npm run build
-  Deploy-APP:
-    name: Deploy the Code
-    needs: Building-APP
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get Code
-        uses: actions/checkout@v4
-      - name: Installing Node 
-        uses: actions/setup-node@v4
+      - name: upload Artifacts
+      - uses: actions/upload-artifact@v4
         with:
-          node-version: '18'
-      - name: Installing dependencies
-        run: npm ci
-      - name: Deploying Code...
-        run: echo "Deploying Code"
+          name: my-artifact
+          path: dist
+  # Deploy-APP:
+  #   name: Deploy the Code
+  #   needs: Building-APP
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Get Code
+  #       uses: actions/checkout@v4
+  #     - name: Installing Node 
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: '18'
+  #     - name: Installing dependencies
+  #       run: npm ci
+  #     - name: Deploying Code...
+  #       run: echo "Deploying Code"
