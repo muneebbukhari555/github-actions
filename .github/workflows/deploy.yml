@@ -9,11 +9,11 @@ env:
 jobs:
   test:
     env:
-      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
-      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+      environment: Testing
+      MONGODB_USERNAME: ${{ secrets.MONGO_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
       MONGODB_CLUSTER_ADDRESS: cluster1.xraczqh.mongodb.net
       PORT: 8080
-    environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
