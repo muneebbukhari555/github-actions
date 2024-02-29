@@ -94,3 +94,14 @@ jobs:
         run: ls
       - name: Output JS filename
         run:  echo "${{ needs.Building-APP.outputs.script-file }}"
+  
+  Report:
+    runs-on: ubuntu-latest
+    name: Creating Reports
+    needs: [Run-lint-on-APP, Deploy-APP]
+    if: failure()
+    steps:
+      - name: Echo Error
+        run: echo "There somthing buggy"
+      - name: print Github Event
+        run: echo $ {{ toJSON(github) }}
