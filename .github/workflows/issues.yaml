@@ -1,9 +1,0 @@
-name: Issue Creation Workflow
-on: issues
-jobs:
-  output:
-    name: Output of Issue Details
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get Details about issue
-        run: echo "${{ toJSON(github.event) }}"
