@@ -8,7 +8,7 @@ inputs:
 outputs:
   used-chache:
     description: 'Is cache is used?'
-    value: ${{step.install.outputs.cache}}
+    value: ${{steps.install.outputs.cache}}
 runs:
   using: 'composite'
   steps:
