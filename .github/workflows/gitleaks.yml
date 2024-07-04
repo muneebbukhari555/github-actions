@@ -22,5 +22,13 @@ jobs:
           curl -L https://github.com/thoughtworks/talisman/releases/download/v1.29.0/talisman_linux_amd64 -o /usr/local/bin/talisman
           chmod +x /usr/local/bin/talisman
           
-      - name: Run talisman
+      - name: Install Talisman HTML Report
+        run: |
+          git clone https://github.com/jaydeepc/talisman-html-report.git
+          cd talisman-html-report
+          npm install
+          npm run build
+          cp -r dist /usr/local/bin/talisman-html-report
+
+      - name: Run talisman with HTML report
         run: talisman --scanWithHtml
