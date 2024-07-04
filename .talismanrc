@@ -1,4 +1,4 @@
 fileignoreconfig:
-- filename: credentials
-  checksum: d4dec98eaa4a02b4d66e46670fd15fab093520c875e4619873be927495ebf52f
+- filename: talisman_report/talisman_reports/data/report.json
+  checksum: c0fb491cbc6943bce8db9136cd92ec4a98c3e1faeadbccd201d345619f17694f
 version: ""
