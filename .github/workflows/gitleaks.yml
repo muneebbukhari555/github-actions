@@ -18,5 +18,11 @@ jobs:
       - uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          args: --redact
+    
+      - name: Install talisman
+        run: |
+          curl -L https://github.com/thoughtworks/talisman/releases/download/v1.29.0/talisman_linux_amd64 -o /usr/local/bin/talisman
+          chmod +x /usr/local/bin/talisman
+          
+      - name: Run talisman
+        run: talisman --scanWithHtml
