@@ -15,11 +15,10 @@ jobs:
     name: gitleaks
     runs-on: ubuntu-latest
     steps:
-      - name: Install talisman
-        run: |
-          bash -c "$(curl --silent https://raw.githubusercontent.com/thoughtworks/talisman/main/install.sh)"
-          curl https://github.com/jaydeepc/talisman-html-report/archive/v1.3.zip  -o ~/.talisman/talisman_html_report.zip -J -L && cd ~/.talisman && unzip talisman_html_report.zip -d . && mv talisman-html-report-1.3 talisman_html_report && rm talisman_html_report.zip
-
-      - name: Run talisman
-        run: talisman --scanWithHtml
-            
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          

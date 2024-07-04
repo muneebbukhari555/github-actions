@@ -20,18 +20,6 @@ inherit-defaults = true
   regex = '''\b[0-9a-zA-Z/+]{40}\b'''
   tags = ["aws"]
 
-# Exclude specific paths or file patterns from the scan
-[exclude-trees]
-  paths = [
-    "vendor/",
-    "node_modules/"
-  ]
-
-# Specify repositories to exclude by name
-[exclude-repos]
-  names = [
-    "test-repo"
-  ]
 
 # Configure severity levels for different types of leaks
 [severity]
