@@ -2,10 +2,10 @@ name: gitleaks
 on:
   push:
     branches:
-      - main
+      - test-scan
   pull_request:
     branches:
-      - main
+      - test-scan
   workflow_dispatch:
   schedule:
     - cron: "0 1 * * *" # run once a day at 1 AM
