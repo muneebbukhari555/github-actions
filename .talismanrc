@@ -1,6 +1,4 @@
 fileignoreconfig:
-- filename: dvpwa
-  checksum: 8c7de1b94355c3098e3798c56c89fd6684c85e8bac84440209cddd0577b07f30
-- filename: credentials
-  checksum: c973418d85ca85ef8efe22ed4190aca67c06c640d247b0db39eec9f8a079804a
+- filename: talisman_report/talisman_reports/data/report.json
+  checksum: c0fb491cbc6943bce8db9136cd92ec4a98c3e1faeadbccd201d345619f17694f
 version: ""
